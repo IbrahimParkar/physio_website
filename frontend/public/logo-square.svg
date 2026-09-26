@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">DrTAPhysio square logo</title>
+  <desc id="desc">Square monogram logo for Dr. Talha Parkar Physiotherapy and Rehabilitation.</desc>
+  <rect width="256" height="256" rx="36" fill="#0F4C81"/>
+  <circle cx="128" cy="92" r="38" fill="#FFFFFF" opacity="0.96"/>
+  <path d="M128 52v80M88 92h80" stroke="#0F4C81" stroke-width="16" stroke-linecap="round"/>
+  <path d="M74 175c18-25 36-37 54-37s36 12 54 37" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
+  <text x="128" y="220" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800" fill="#FFFFFF">DrTAP</text>
+</svg>
