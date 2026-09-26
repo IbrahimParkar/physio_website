@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # DrTAPhysio Website
 
 Modern frontend and backend scaffold for Dr. Talha Parkar / DrTAPhysio.
