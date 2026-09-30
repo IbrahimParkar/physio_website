@@ -1,3 +1,5 @@
+export type CaseStatus = "Active" | "Discharged" | "Reassessment";
+
 export const workflowSteps = [
   "Assess",
   "Create Case",
