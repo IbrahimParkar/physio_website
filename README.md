@@ -28,6 +28,18 @@ npm run dev
 
 Open `http://127.0.0.1:3000`.
 
+## Deploy the frontend to GitHub Pages
+
+GitHub Pages is suitable for the static frontend and mock portal screens. It does not run the FastAPI backend, database, authentication, or real patient functionality; those services must be hosted separately.
+
+1. Push the repository to GitHub on the `main` branch.
+2. In the repository, open **Settings → Pages**.
+3. Set **Source** to **GitHub Actions**.
+4. The included `.github/workflows/deploy-pages.yml` will build and deploy the frontend.
+
+For this repository, the project site URL will be:
+`https://ibrahimparkar.github.io/physio_website/`
+
 ## Run The Backend
 
 Install Python 3.11+ and PostgreSQL, then:

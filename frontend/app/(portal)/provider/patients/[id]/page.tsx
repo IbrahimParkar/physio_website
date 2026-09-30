@@ -1,6 +1,10 @@
 import { AppShell, ProgressBar, StatusBadge } from "@/components/layout/AppShell";
 import { cases, documents, patients, sessions } from "@/data/mock/practice";
 
+export function generateStaticParams() {
+  return patients.map((patient) => ({ id: patient.id }));
+}
+
 export default function PatientProfile({ params }: { params: { id: string } }) {
   const patient = patients.find((item) => item.id === params.id) ?? patients[0];
   const patientCases = cases.filter((item) => item.patientId === patient.id);

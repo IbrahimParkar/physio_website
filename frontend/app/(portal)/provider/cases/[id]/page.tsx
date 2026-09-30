@@ -1,6 +1,10 @@
 import { AppShell, ProgressBar, StatusBadge } from "@/components/layout/AppShell";
 import { cases, exerciseLibrary, sessions, workflowSteps } from "@/data/mock/practice";
 
+export function generateStaticParams() {
+  return cases.map((clinicalCase) => ({ id: clinicalCase.id }));
+}
+
 export default function CaseDetail({ params }: { params: { id: string } }) {
   const clinicalCase = cases.find((item) => item.id === params.id) ?? cases[0];
 
