@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body style={{ "--asset-base": process.env.NEXT_PUBLIC_BASE_PATH ?? "" } as React.CSSProperties}>{children}</body>
+      <body style={{ "--asset-background": `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/assets/backgrounds/background.png)` } as React.CSSProperties}>{children}</body>
     </html>
   );
 }
