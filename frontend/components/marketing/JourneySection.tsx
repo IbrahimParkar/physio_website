@@ -27,7 +27,7 @@ export default function JourneySection() {
                   <span><HeartHandshake size={18} /><small>Real-life,<br />functional progress</small></span>
                 </div>
               </div>
-              <figure className="journey-image"><img src="/assets/cards/home-based-rehabilitation.png" alt="Home-based physiotherapy rehabilitation" loading="lazy" /><blockquote className="journey-image-quote">“Rehabilitation<br />that fits into your<br />life, at home.”</blockquote></figure>
+              <figure className="journey-image"><img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/assets/cards/home-based-rehabilitation.png`} alt="Home-based physiotherapy rehabilitation" loading="lazy" /><blockquote className="journey-image-quote">“Rehabilitation<br />that fits into your<br />life, at home.”</blockquote></figure>
             </div>
             <div className="journey-steps journey-steps-seven" aria-label="Home-based rehabilitation process">
               {teleSteps.map(([number, title, text], index) => { const Icon = teleStepIcons[index]; return <article key={title}><div className="journey-step-marker"><span>{number}</span><Icon size={18} /></div><h4>{title}</h4><p>{text}</p></article>; })}
@@ -35,7 +35,7 @@ export default function JourneySection() {
           </article>
           <article className="journey-path journey-path-personalized">
             <div className="journey-feature journey-feature-personalized">
-              <figure className="journey-image"><img src="/assets/cards/home-based-rehabilitation.png" alt="Personalized rehabilitation guidance" loading="lazy" /></figure>
+              <figure className="journey-image"><img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/assets/cards/home-based-rehabilitation.png`} alt="Personalized rehabilitation guidance" loading="lazy" /></figure>
               <div className="journey-copy">
                 <p className="eyebrow">PERSONALIZED REHABILITATION</p>
                 <h3>Your plan adapts as your function improves.</h3>

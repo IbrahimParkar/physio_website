@@ -6,7 +6,7 @@ export default function PatientLoginPage() {
     <main className="auth-page">
       <section className="auth-card">
         <Link className="brand" href="/">
-          <img className="logo-horizontal" src="/assets/brand/logo-horizontal.png" alt="Dr. Talha Parkar Physiotherapy and Rehabilitation" />
+          <img className="logo-horizontal" src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/assets/brand/logo-horizontal.png`} alt="Dr. Talha Parkar Physiotherapy and Rehabilitation" />
         </Link>
         <div className="auth-icon"><LockKeyhole size={26} /></div>
         <h1>Patient<br />portal<br />access</h1>

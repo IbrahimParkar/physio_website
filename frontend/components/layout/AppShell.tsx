@@ -11,7 +11,7 @@ export function AppShell({ children, title, eyebrow, mode = "provider" }: { chil
     <div className={`app-shell ${isPatient ? "patient-experience" : "provider-experience"}`}>
       <aside className="app-sidebar">
         <Link className="app-brand" href="/">
-          <img src="/assets/brand/logo-square.jpg" alt="" />
+          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/assets/brand/logo-square.jpg`} alt="" />
           <span><strong>DrTAPhysio</strong><small>{isPatient ? "Recovery Portal" : "Clinical Workspace"}</small></span>
         </Link>
         <nav aria-label={`${mode} navigation`}>{nav.map(([label, href, Icon]) => <Link key={href} href={href}><Icon size={18} />{label}</Link>)}</nav>

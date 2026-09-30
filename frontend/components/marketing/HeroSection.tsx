@@ -14,7 +14,7 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="hero-composition">
-            <img src="/assets/photos/professional-photo.png" alt="Dr. Talha Parkar - physiotherapy and rehabilitation specialist" />
+            <img src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/assets/photos/professional-photo.png`} alt="Dr. Talha Parkar - physiotherapy and rehabilitation specialist" />
           </div>
         </section>
   );
