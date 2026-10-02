@@ -4,8 +4,10 @@ This repository contains a Next.js frontend and a FastAPI backend for the DrTAPh
 
 ## Structure
 
-- `frontend/` — public marketing site and patient/provider portal.
-- `backend/` — FastAPI application, domain modules, database access, and SQL schema.
+- `frontend/` — Next.js static site, public marketing pages, authentication entry screen, and mock patient/provider portal.
+- `backend/` — FastAPI service with API routers, clinical domain modules, database access, and PostgreSQL schema/seed files.
+- `.github/workflows/` — GitHub Actions workflow that builds and deploys the static frontend.
+- `README.md` — local development, deployment, and project overview documentation.
 
 Keep frontend presentation and route concerns in `frontend/`. Keep API, persistence, and clinical domain behavior in `backend/`. Preserve existing URLs and API contracts when restructuring code.
 
@@ -13,27 +15,22 @@ Keep frontend presentation and route concerns in `frontend/`. Keep API, persiste
 
 ### Frontend
 
-- `frontend/app/layout.tsx` is the global HTML shell and metadata entry point.
-- `frontend/app/(marketing)/page.tsx` renders the public landing page through `components/marketing/HomePage.tsx`.
-- `frontend/app/(auth)/patient-login/` contains the patient login/demo entry screen.
-- `frontend/app/(portal)/patient/` contains patient-facing dashboard, appointments, current case, exercises, documents, messages, profile, and progress routes.
-- `frontend/app/(portal)/provider/` contains provider dashboard, cases, patients, appointments, assessments, documents, exercises, messages, programs, progress, reports, sessions, settings, billing, and dynamic detail routes.
-- Parentheses in route folders are Next.js route groups and do not appear in public URLs. `[id]` folders are dynamic routes generated from mock records.
-- `frontend/components/marketing/` contains reusable public-site sections such as the header, hero, services, case studies, booking, and footer.
-- `frontend/components/layout/` contains the shared portal shell, navigation, badges, progress bars, and application UI.
-- `frontend/data/marketing/` contains public marketing content. `frontend/data/mock/` contains demo patients, cases, sessions, exercises, appointments, programs, and documents; it is not connected to the backend.
-- `frontend/public/assets/` contains static images and brand assets served by the browser.
-- `frontend/next.config.mjs` configures the static GitHub Pages export. The Pages workflow builds from `frontend/` and uses `/physio_website` as the project-site base path.
+- `frontend/app/` contains the App Router: `layout.tsx` defines the HTML shell and metadata, while route groups organize marketing, auth, patient, and provider pages.
+- `frontend/components/` contains reusable UI, split into public marketing sections and shared portal layout/components.
+- `frontend/data/` contains typed marketing content and mock portal records; mock data is not connected to the backend.
+- `frontend/lib/` contains shared frontend helpers such as root-relative site paths.
+- `frontend/styles/` and `frontend/app/globals.css` contain design tokens and global styles.
+- `frontend/public/assets/` contains browser-served images and brand assets.
+- `frontend/next.config.mjs` configures the static export with root-relative URLs for `https://drtalhaparkar.in/`.
 
 ### Backend
 
-- `backend/app/main.py` creates the FastAPI application and registers the API router.
-- `backend/app/config.py` loads environment configuration; `database.py` creates the database connection/session layer.
-- `backend/app/models.py` and `schemas.py` contain shared persistence and API types.
-- `backend/app/api/router.py` is the central API route aggregator.
-- `backend/app/patients/` and `backend/app/cases/` contain domain-specific models, request/response schemas, and routers.
-- `backend/database/schema.sql` defines the PostgreSQL schema and `seed.sql` provides development seed data.
-- `backend/.env.example` documents required backend environment variables. Never commit a populated `.env` file or real clinical data.
+- `backend/app/main.py` creates the FastAPI application and registers the central API router.
+- `backend/app/config.py` loads environment settings, while `backend/app/database.py` owns the SQLAlchemy engine and sessions.
+- `backend/app/models.py` and `backend/app/schemas.py` contain shared persistence and API types.
+- `backend/app/api/` aggregates HTTP routes; `patients/` and `cases/` contain domain models, schemas, and routers.
+- `backend/database/schema.sql` defines the PostgreSQL schema and `seed.sql` provides development data.
+- `backend/.env.example` documents required settings. Never commit populated environment files or real clinical data.
 
 ### Deployment and boundaries
 

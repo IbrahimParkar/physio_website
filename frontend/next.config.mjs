@@ -7,8 +7,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Set NEXT_PUBLIC_BASE_PATH=/physio_website in the Pages build. Keeping
-  // this empty locally means `npm run dev` continues to use root URLs.
+  // An empty base path keeps the production site at the domain root.
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || "",
 };
 

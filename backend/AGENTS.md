@@ -4,12 +4,12 @@ The backend is a FastAPI application using SQLAlchemy and PostgreSQL.
 
 ## Structure
 
-- `app/main.py` configures the FastAPI application and registers routers.
-- `app/api/` combines domain routers.
-- `app/patients/` owns patient models, schemas, and routes.
-- `app/cases/` owns case models, schemas, and routes.
-- `app/database.py` owns the SQLAlchemy engine, session, and declarative base.
-- `database/` contains the SQL schema and seed data.
+- `app/main.py` creates the FastAPI application and registers the API router.
+- `app/config.py` loads environment configuration; `app/database.py` owns the SQLAlchemy engine, sessions, and declarative base.
+- `app/models.py` and `app/schemas.py` contain shared persistence models and API schemas.
+- `app/api/` aggregates HTTP routes; `app/patients/` and `app/cases/` own their domain models, schemas, and routers.
+- `database/schema.sql` defines the PostgreSQL schema and `database/seed.sql` provides development seed data.
+- `.env.example` documents required backend settings; `SECURITY.md` records security guidance.
 
 ## Backend Conventions
 

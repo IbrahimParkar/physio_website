@@ -37,8 +37,8 @@ GitHub Pages is suitable for the static frontend and mock portal screens. It doe
 3. Set **Source** to **GitHub Actions**.
 4. The included `.github/workflows/deploy-pages.yml` will build and deploy the frontend.
 
-For this repository, the project site URL will be:
-`https://ibrahimparkar.github.io/physio_website/`
+The production site is available at:
+`https://drtalhaparkar.in/`
 
 ## Run The Backend
 
